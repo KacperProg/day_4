@@ -22,7 +22,9 @@ public class MovieService {
         return movie.getTitle() + " was added to the database";
     }
 
-    public displayAllMovies(){}
+    public displayAllMovies(){
+
+    }
 
     public displayMoviesByID(){}
 

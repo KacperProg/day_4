@@ -26,14 +26,15 @@ public class CinemaController {
     }
 
     @GetMapping
-    public Movies getMovieStatus(@PathVariable long id){
-        Optional<Movies> movies = movieService.displayMoviesByID(id);
-        return new ResponseEntity<>(movies.get().getTitle(), HttpStatus.OK);
+    public Movies getMovieStatus(){
+        Optional<Movies> movies = movieService.displayAllMovies();
+        return new ResponseEntity<> (HttpStatus.OK);
     }
 
     @GetMapping
-    public ResponseEntity<> getMovieStatusByID(long id){
-
+    public ResponseEntity<> getMovieStatusByID(@PathVariable long id){
+        Optional<Movies> movies = movieService.displayMoviesByID(id);
+        return new ResponseEntity<>(movies.get().getTitle(), HttpStatus.OK);
     }
 
 }
