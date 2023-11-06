@@ -9,11 +9,11 @@ public class Movies {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "title")
+    @Column
     private String title;
-    @Column(name = "rating")
+    @Column
     private float rating;
-    @Column(name = "duration")
+    @Column
     private int duration;
 
     public Movies(String title, float rating, int duration){

@@ -4,9 +4,14 @@ import com.example.Spring_Cinema_Lab.models.Movies;
 import com.example.Spring_Cinema_Lab.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+@Service
 public class MovieService {
 
     @Autowired
@@ -22,10 +27,12 @@ public class MovieService {
         return movie.getTitle() + " was added to the database";
     }
 
-    public displayAllMovies(){
-
+    public ArrayList<Movies> displayAllMovies(){
+        return movieRepository.findAll();
     }
 
-    public displayMoviesByID(){}
+    public ArrayList<Movies> displayMoviesByID(long id){
+        return movieRepository.findAllById(id);
+    }
 
 }
