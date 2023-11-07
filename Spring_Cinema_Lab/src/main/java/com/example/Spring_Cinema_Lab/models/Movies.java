@@ -20,7 +20,6 @@ public class Movies {
         this.title = title;
         this.rating = rating;
         this.duration = duration;
-
     }
 
     public Movies(){
